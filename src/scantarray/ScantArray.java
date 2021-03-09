@@ -138,7 +138,6 @@ public class ScantArray {
         System.out.println(sa1.getValueAt(2,3));
         System.out.println("rows "+ sa1.getNumRows());
         System.out.println("columns "+ sa1.getNumColumns());
-
         System.out.println(sa1);
 
         sa1.removeColumn(1);
@@ -146,14 +145,19 @@ public class ScantArray {
 
         /******* please add one more test of your own *******/
 
-        ScantArray sa2 = new ScantArray(30,30);
-        sa2.addEntry(1,4,4);
-        sa2.addEntry(2,0,1);
-        sa2.addEntry(3,1,-9);
-        sa2.addEntry(1,1,5);
+        ScantArray sa2 = new ScantArray(8,30);
+        sa2.addEntry(4,4,4);
+        sa2.addEntry(3,8,1);
+        sa2.addEntry(5,29,-9);
+        sa2.addEntry(0,8,11);
+        sa2.addEntry(4,14,4);
+        sa2.addEntry(3,17,15);
+        sa2.addEntry(3,23,-8);
+        sa2.addEntry(6,1,7);
+        sa2.addEntry(7,8,6);
 
-        System.out.println(sa2.getValueAt(2,0));
-        System.out.println(sa2.getValueAt(3,1));
+        System.out.println(sa2.getValueAt(4,4));
+        System.out.println(sa2.getValueAt(3,23));
         System.out.println(sa2.getValueAt(2,3));
         System.out.println("rows "+ sa2.getNumRows());
         System.out.println("columns "+ sa2.getNumColumns());
@@ -162,6 +166,8 @@ public class ScantArray {
 
         sa2.removeColumn(1);
         System.out.println(sa2);
+        System.out.println("rows "+ sa2.getNumRows());
+        System.out.println("columns "+ sa2.getNumColumns());
 
     }
 }

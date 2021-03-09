@@ -12,7 +12,7 @@ public class WordDuoList {
     instance variable allDuos to an ArrayList of WordDuo objects.
 
     A WordDuo object consists of a word from the array paired with a
-    word that appears later in the array.  The allDuos list constins
+    word that appears later in the array.  The allDuos list contains
     WordDuo objects (words[i], words[j]) for every i and j, where
     0<=i<j<words.length.  Each WordDuo object is added exactly once to
     the list.
@@ -42,9 +42,12 @@ public class WordDuoList {
      */
     public WordDuoList(String[] words){
         /* part A */
-
-
-
+        this.allDuos = new ArrayList<WordDuo>();
+        for (int i = 0; i < words.length - 1; i++){
+            for (int j = i + 1; j < words.length; j++) {
+                this.allDuos.add(new WordDuo(words[i], words[j]));
+            }
+        }
 
     }
     public String toString(){
@@ -73,10 +76,13 @@ public class WordDuoList {
      */
     public int numMatches(){
         /* part B  */
-
-
-
-        return 0;  // replace this
+        int matches = 0;
+        for (WordDuo duo : this.allDuos) {
+            if (duo.getFirst().equals(duo.getSecond())) {
+                matches++;
+            }
+        }
+        return matches;  // replace this
     }
 
     /*Write the method moveMatchesToTop()  THis method will look for
@@ -92,7 +98,9 @@ public class WordDuoList {
     public void moveMatchesToTop(){
         /* part c */
 
+        for (int i = 0; i < this.numMatches(); i++) {
 
+        }
 
     }
 
