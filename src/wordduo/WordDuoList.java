@@ -82,7 +82,7 @@ public class WordDuoList {
                 matches++;
             }
         }
-        return matches;  // replace this
+        return this.findMatches().size();  // replace this
     }
 
     /*Write the method moveMatchesToTop()  THis method will look for
@@ -98,10 +98,33 @@ public class WordDuoList {
     public void moveMatchesToTop(){
         /* part c */
 
-        for (int i = 0; i < this.numMatches(); i++) {
+//        for (int i = 0; i < this.allDuos.size(); i++) {
+//            WordDuo duo = this.allDuos.get(i);
+//            if (duo.getFirst().equals(duo.getSecond())) {
+//                this.allDuos.add(0, this.allDuos.remove(i));
+//            }
+//        }
 
+        ArrayList<WordDuo> matches = this.findMatches();
+        for (int i = 0; i < matches.size(); i++) {
+            WordDuo duo = matches.get(i);
+            this.allDuos.remove(duo);
+            this.allDuos.add(0, duo);
         }
 
+    }
+
+    public ArrayList<WordDuo> findMatches() {
+
+        ArrayList<WordDuo> matches = new ArrayList<WordDuo>();
+
+        for (int i = 0; i < this.allDuos.size(); i++) {
+            WordDuo duo = this.allDuos.get(i);
+            if (duo.getFirst().equals(duo.getSecond())) {
+                matches.add(duo);
+            }
+        }
+        return matches;
     }
 
     public static void main(String[] args){
